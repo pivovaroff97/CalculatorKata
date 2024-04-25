@@ -28,6 +28,9 @@ public class Main {
                 a = Integer.parseInt(expression[0]);
                 b = Integer.parseInt(expression[2]);
             }
+            if (!isCorrectNumeral(a) || !isCorrectNumeral(b)) {
+                throw new Exception("Numerals must be in interval from 1 to 10");
+            }
         } catch (NumberFormatException e) {
             throw new Exception("Incorrect numerals");
         }
@@ -72,5 +75,9 @@ public class Main {
             }
         }
         return result;
+    }
+
+    private static boolean isCorrectNumeral(int a) {
+        return a >= 1 && a <= 10;
     }
 }
